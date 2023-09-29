@@ -1,0 +1,25 @@
+name: route_prediction_api
+channels:
+  - conda
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pip=21.0
+  - numpy==1.23.4
+  - pandas==1.5.1
+  - geopandas==0.11.1
+  - scikit-learn==1.1.1
+  - pyproj==3.4.0
+  - pip:
+    - torch==1.13.0
+    - torchvision==0.14.0
+    - pytorch-lightning==1.6.3
+    - mlflow==1.30
+    - protobuf==3.20.0
+    - cloudpickle==2.2.1
+
+
+
+
+
+

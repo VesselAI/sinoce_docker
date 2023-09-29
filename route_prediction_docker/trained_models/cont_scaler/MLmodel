@@ -1,0 +1,11 @@
+artifact_path: cont_scaler
+flavors:
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.1.1
+mlflow_version: 1.30.0
+model_uuid: ce3def8050ee47dbb7b3988bf445467b
+run_id: NN_all_bounded_w10_hid_500_1_min_MSE_1686321480_aae817d7
+utc_time_created: '2023-06-09 14:40:19.109781'

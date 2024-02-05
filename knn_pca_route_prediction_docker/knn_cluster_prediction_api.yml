@@ -1,0 +1,20 @@
+name: knn_cluster_prediction_api
+channels:
+  - conda
+  - conda-forge
+dependencies:
+  - python=3.8
+  - numpy==1.23.4
+  - scipy==1.10.1
+  - pandas==1.5.1
+  - scikit-learn==1.1.1
+  - pyproj==3.4.0
+  - flask==2.3.1
+  - hdbscan==0.8.29
+
+
+
+
+
+
+

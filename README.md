@@ -18,4 +18,7 @@ Place this file within
 * ``route_prediction_docker/trained_models/model/data/`` for route prediction model, and 
 * ``anomaly_detection_docker/trained_models/model/data/`` for anomaly detection model,
 
+For knn_pca_route_prediction you will need a different file (must be requested):
+`` train_data_dest_50.json`` 
+
 

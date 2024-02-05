@@ -1,7 +1,10 @@
 # Overview
-This repo contains two different docker container:  
-1. anomaly detection
-2. route prediction 
+This repo contains different docker containers:
+1. pre processing
+2. anomaly detection
+3. NN route prediction
+4. kNN PCA route prediction
+
 
 See readmes inside the different folders to run the containers. 
 

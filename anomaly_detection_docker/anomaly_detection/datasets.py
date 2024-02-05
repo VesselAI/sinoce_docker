@@ -10,14 +10,14 @@ class AISDataset(Dataset):
     def __init__(self, data, window_size, idx, device: torch.device):
         super().__init__()
         src, src_cat = get_sliding_window(data.scaled_dynamic_data, window_size=window_size, idx=idx, to_torch=True,
-                                 cat_data=data.scaled_categorical_data)
+                                          cat_data=data.scaled_categorical_data)
 
         self.x, self.y, self.x_cat = src.to(device), src.to(device), src_cat.to(device)
 
         """
         self.x, self.y = get_traj_segments([data.dyn_data[idx] for idx in data_idx],
                                            input_length=input_len, output_length=output_len, to_tensor=True, step=step)
-        
+
         self.x_cat = get_static_segments_dyn(dyn_data=[data.dyn_data[idx] for idx in data_idx],
                                          stat_data=[data.cat_data[idx, :] for idx in data_idx],
                                          input_length=input_len, output_length=output_len, to_tensor=True, step=step).long()
@@ -32,15 +32,15 @@ class AISDataset(Dataset):
         return self.x.shape[0]
 
     def __getitem__(self, idx):
-
         return self.x[idx, :, :], self.y[idx, :, :], self.x_cat[idx, :]
 
-        #return self.x[idx, :, :], self.y[idx, :, :], self.x_cat[idx, :], self.x_cont[idx, :]
+        # return self.x[idx, :, :], self.y[idx, :, :], self.x_cat[idx, :], self.x_cont[idx, :]
 
     def cuda(self):
         if torch.cuda.is_available():
             self.x = self.x.to('cuda')
             self.y = self.y.to('cuda')
+
 
 class AEDataModule(pl.LightningDataModule):
     # Load data into our model:
@@ -68,7 +68,6 @@ class AEDataModule(pl.LightningDataModule):
         pass
 
     def setup(self, stage):
-
         self.train_dataset = AISDataset(data=self.data, window_size=self.window_size, idx=self.data.train_idx,
                                         device=self.device)
         self.val_dataset = AISDataset(data=self.data, window_size=self.window_size, idx=self.data.val_idx,
